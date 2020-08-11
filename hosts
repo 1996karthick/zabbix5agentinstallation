@@ -1,0 +1,16 @@
+[redhat]
+centos.example.com
+
+[ubuntu]
+ubuntu.example.com
+
+[windows]
+silambarasan-example-com
+
+[windows:vars]
+ansible_user=ansible
+ansible_become_user=ansible
+ansible_become_method=runas
+ansible_password=Zippyops@123
+ansible_connection=winrm
+ansible_winrm_server_cert_validation=ignore

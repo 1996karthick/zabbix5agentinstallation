@@ -1,0 +1,4 @@
+---
+# defaults file for roles/zabbix
+# Common
+zabbix_servername: zabbix5.example.com

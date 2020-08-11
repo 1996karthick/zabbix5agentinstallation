@@ -1,0 +1,24 @@
+---
+ - name: Checking facts
+   hosts: redhat
+   become: yes
+   tasks:
+
+     - name: "Check if zabbix is installed"
+       package_facts:
+         manager: "auto"
+       register: output_file
+    
+     - name: Print the rpm package facts
+       debug:
+         var: ansible_facts.packages
+#       register: output_file
+
+     - name: "Zabbix-agent test result"
+       debug:
+         msg: "zabbix-agent found"
+       when: "'zabbix-agent' in ansible_facts.packages"
+
+     - name: Check whether a package called foobar is installed
+       debug:
+         msg: "{{ output_file }}"
